@@ -7,6 +7,7 @@ const app = express();
 
 app.use(helmet());
 app.set("view engine", "pug");
+app.use("/static", express.static("static"));
 
 app.use(routes.home, globalRouter);
 
