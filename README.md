@@ -1,5 +1,9 @@
 # TYPING TEST
 
+## Problem
+
+&nbsp; is not equal to whitespace.
+
 ## Features
 
 - [ ] Typing Letters

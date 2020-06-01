@@ -31,11 +31,9 @@
       margin-bottom: 20px;
     }
     .typing__token {
-      margin-right: 20px;
     }
     .token__unit {
-      display: inline-block;
-      position: relative;
+      display: inline;
       border-radius: 5px;
     }
   }
@@ -43,10 +41,10 @@
 
 .right {
   background-color: #dcfdbc;
-  outline: 2px solid white;
+  outline: 1.5px solid white;
 }
 
 .wrong {
   background-color: pink;
-  outline: 2px solid white;
+  outline: 1.5px solid white;
 }
