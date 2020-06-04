@@ -15,7 +15,7 @@
   }
   .home__typing {
     width: 60%;
-    height: 50%;
+    height: 30%;
     border: black 1px solid;
     border-radius: 20px;
     font-family: "Roboto Mono", monospace;
@@ -28,12 +28,9 @@
     .typing__line {
       display: block;
       word-wrap: break-word;
-      margin-bottom: 20px;
-    }
-    .typing__token {
+      margin-bottom: 40px;
     }
     .token__unit {
-      display: inline;
       border-radius: 5px;
     }
   }

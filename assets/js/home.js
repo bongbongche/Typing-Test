@@ -1,9 +1,33 @@
 const typingContainer = document.getElementById("jsTyping");
 const typingToken = typingContainer.querySelectorAll(".token__unit");
 
+const speedContainer = document.getElementById("jsSpeed");
+const speedTime = speedContainer.querySelector(".speed__time");
+const speedWpm = speedContainer.querySelector(".speed__wpm");
+
 let index = 0;
+let time = 0;
+let wpm = 0;
+let pressed = false;
+
+function calculateWpm(totalTime) {
+  console.log(totalTime);
+  wpm = index / 5 / totalTime / 60;
+  speedWpm.innerText = wpm * 100;
+}
+
+function setTime() {
+  if (pressed === false) {
+    setInterval(() => {
+      speedTime.innerText = ++time;
+      calculateWpm(speedTime.innerText);
+    }, 1000);
+    pressed = true;
+  }
+}
 
 function handleTyping(e) {
+  setTime();
   if (e.getModifierState(e.key) === true) {
     return;
   } else if (e.key === "Backspace") {
@@ -17,11 +41,9 @@ function handleTyping(e) {
     typingToken[index].classList.add("right");
     index += 1;
   } else {
-    if (e.key === typingToken[index].innerText) {
-      typingToken[index].classList.add("right");
-    } else {
-      typingToken[index].classList.add("wrong");
-    }
+    e.key === typingToken[index].innerText
+      ? typingToken[index].classList.add("right")
+      : typingToken[index].classList.add("wrong");
     index += 1;
   }
 }
