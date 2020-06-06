@@ -3,13 +3,12 @@
 ## Problem
 
 ~~&nbsp; is not equal to whitespace.~~
-Need token unit management
 
 ## Features
 
 - [x] Typing Letters
 - [x] Verification
-- [ ] Show speed
+- [x] Show speed
 - [ ] Hmm...
 
 ## Features to be added

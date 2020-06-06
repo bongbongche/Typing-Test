@@ -2,25 +2,27 @@ const typingContainer = document.getElementById("jsTyping");
 const typingToken = typingContainer.querySelectorAll(".token__unit");
 
 const speedContainer = document.getElementById("jsSpeed");
-const speedTime = speedContainer.querySelector(".speed__time");
 const speedWpm = speedContainer.querySelector(".speed__wpm");
 
 let index = 0;
-let time = 0;
-let wpm = 0;
 let pressed = false;
 
-function calculateWpm(totalTime) {
-  console.log(totalTime);
-  wpm = index / 5 / totalTime / 60;
-  speedWpm.innerText = wpm * 100;
+function showWpm(totalTime) {
+  const wpm = Math.round(index / 5 / totalTime);
+  const wpmText = speedWpm.querySelector("p");
+  wpmText.innerText = `WPM: ${wpm}`;
 }
 
 function setTime() {
   if (pressed === false) {
+    speedContainer.style.opacity = 1;
+    const startTime = new Date().getTime();
     setInterval(() => {
-      speedTime.innerText = ++time;
-      calculateWpm(speedTime.innerText);
+      const currentTime = new Date().getTime();
+      const typingTime = currentTime - startTime;
+      const seconds = Math.floor(typingTime / 1000);
+      const minutes = seconds / 60;
+      showWpm(minutes);
     }, 1000);
     pressed = true;
   }

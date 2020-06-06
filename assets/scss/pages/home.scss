@@ -16,7 +16,6 @@
   .home__typing {
     width: 60%;
     height: 30%;
-    border: black 1px solid;
     border-radius: 20px;
     font-family: "Roboto Mono", monospace;
     font-weight: 400;
@@ -32,6 +31,20 @@
     }
     .token__unit {
       border-radius: 5px;
+    }
+  }
+  .home__speed {
+    margin-top: 20px;
+    font-size: 30px;
+    opacity: 0;
+    transition: 3s;
+    .speed__wpm {
+      display: flex;
+      flex-direction: column;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 20px;
     }
   }
 }
